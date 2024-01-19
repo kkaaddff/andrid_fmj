@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.artharyoung.game.fmj.MainActivity">
-    
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
 
     <LinearLayout
         android:id="@+id/game_show"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:layout_margin="16dp"
         android:orientation="vertical">
 
         <com.artharyoung.game.fmj.GameView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_width="600dp"
+            android:layout_height="360dp"
+            android:layout_gravity="center" />
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp">
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-220dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="5dp">
 
         <RelativeLayout
             android:layout_width="150dp"
@@ -39,7 +41,7 @@
                 android:id="@+id/control_center"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true" />
 
             <ImageButton
                 android:id="@+id/game_up"
@@ -49,17 +51,17 @@
                 android:layout_alignLeft="@id/control_center"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/game_key_up"/>
+                android:src="@drawable/game_key_up" />
 
             <ImageButton
                 android:id="@+id/game_down"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_alignLeft="@id/control_center"
                 android:layout_below="@id/control_center"
+                android:layout_alignLeft="@id/control_center"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/game_key_down"/>
+                android:src="@drawable/game_key_down" />
 
             <ImageButton
                 android:id="@+id/game_left"
@@ -69,7 +71,7 @@
                 android:layout_toLeftOf="@id/control_center"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/game_key_left"/>
+                android:src="@drawable/game_key_left" />
 
             <ImageButton
                 android:id="@+id/game_right"
@@ -79,7 +81,7 @@
                 android:layout_toRightOf="@id/control_center"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/game_key_right"/>
+                android:src="@drawable/game_key_right" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -93,7 +95,7 @@
                 android:id="@+id/fun_center"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true" />
 
             <ImageButton
                 android:id="@+id/game_enter"
@@ -103,7 +105,7 @@
                 android:layout_toLeftOf="@id/fun_center"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/game_key_enter"/>
+                android:src="@drawable/game_key_enter" />
 
             <ImageButton
                 android:id="@+id/game_cancel"
@@ -113,7 +115,7 @@
                 android:layout_toRightOf="@id/fun_center"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/game_key_cancel"/>
+                android:src="@drawable/game_key_cancel" />
 
             <ImageButton
                 android:id="@+id/game_page_up"
@@ -123,17 +125,17 @@
                 android:layout_alignLeft="@id/fun_center"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/game_key_page_up"/>
+                android:src="@drawable/game_key_page_up" />
 
             <ImageButton
                 android:id="@+id/game_page_down"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_alignLeft="@id/fun_center"
                 android:layout_below="@id/fun_center"
+                android:layout_alignLeft="@id/fun_center"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/game_key_page_down"/>
+                android:src="@drawable/game_key_page_down" />
         </RelativeLayout>
     </RelativeLayout>
 

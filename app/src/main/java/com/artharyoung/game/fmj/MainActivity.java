@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class MainActivity extends Activity implements View.OnTouchListener ,View.OnLongClickListener{
+public class MainActivity extends Activity implements View.OnTouchListener, View.OnLongClickListener {
     private static final String TAG = "MainActivity";
     public static ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
     private Handler mHandler = null;
@@ -35,14 +35,13 @@ public class MainActivity extends Activity implements View.OnTouchListener ,View
 
         setContentView(R.layout.activity_main);
 
-        ViewGroup gameDisplay = (ViewGroup)findViewById(R.id.game_show);
+        ViewGroup gameDisplay = (ViewGroup) findViewById(R.id.game_show);
 
         //获取屏幕像素相关信息
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int scale = dm.widthPixels/Global.SCREEN_WIDTH;
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(Global.SCREEN_WIDTH*scale, Global.SCREEN_HEIGHT * scale);
-        params.gravity = Gravity.CENTER_HORIZONTAL;
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(dm.widthPixels, dm.heightPixels);
+        params.gravity = Gravity.CENTER;
         gameDisplay.setLayoutParams(params);
 
         initGameControl();
@@ -58,21 +57,21 @@ public class MainActivity extends Activity implements View.OnTouchListener ,View
     }
 
     private static class MyHandler extends Handler {
-            private WeakReference<MainActivity> activityWeakReference;
+        private WeakReference<MainActivity> activityWeakReference;
 
-            public MyHandler(MainActivity activity) {
-                activityWeakReference = new WeakReference<MainActivity>(activity);
-            }
+        public MyHandler(MainActivity activity) {
+            activityWeakReference = new WeakReference<MainActivity>(activity);
+        }
 
-            @Override
-            public void handleMessage(Message msg) {
-                MainActivity activity = activityWeakReference.get();
-                if (activity != null) {
+        @Override
+        public void handleMessage(Message msg) {
+            MainActivity activity = activityWeakReference.get();
+            if (activity != null) {
 
-                    activity.walk();
-                }
+                activity.walk();
             }
         }
+    }
 
     private void walk() {
 
@@ -129,10 +128,9 @@ public class MainActivity extends Activity implements View.OnTouchListener ,View
     }
 
     /**
-     *
      * @param keyCode
      */
-    public void onPressed(int keyCode){
+    public void onPressed(int keyCode) {
 
         mkeyCode = keyCode;
     }

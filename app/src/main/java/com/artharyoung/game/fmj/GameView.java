@@ -3,10 +3,12 @@ package com.artharyoung.game.fmj;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
+import android.view.WindowManager;
 
 import com.artharyoung.game.fmj.graphics.TextRender;
 import com.artharyoung.game.fmj.graphics.Util;
@@ -85,10 +87,11 @@ public class GameView extends SurfaceView implements Callback, Runnable {
 
     /**
      * 提供存储游戏进度的路径
+     *
      * @param fileName
      * @return
      */
-    public File saveLoadGame(String fileName){
+    public File saveLoadGame(String fileName) {
         return mContext.getFileStreamPath(fileName);
     }
 
@@ -156,9 +159,8 @@ public class GameView extends SurfaceView implements Callback, Runnable {
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-
         //设置分辨率为游戏本身大小。便于适配
-        holder.setFixedSize(Global.SCREEN_WIDTH,Global.SCREEN_HEIGHT);
+        holder.setFixedSize(Global.SCREEN_WIDTH, Global.SCREEN_HEIGHT);
         // 开启线程
         isRunning = true;
         t = new Thread(this);
